@@ -1,0 +1,80 @@
+---
+title: "FinalProject"
+author: "Zonglin Li"
+date: "01/16/2020"
+output:
+  pdf_document:
+    includes:
+      in_header: header.tex
+    keep_tex: yes   
+    latex_engine: xelatex
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r}
+library(readxl)
+data0<-read_excel("/Users/zonglinli/Downloads/FinalProject/Data3.xlsx")
+```
+
+```{r}
+data0 <- subset(data0, select = -a422)
+data0 <- subset(data0, select = -a47)
+data0 <- subset(data0, select = -a48)
+data0 <- subset(data0, select = -a612)
+data0 <- subset(data0, select = -a614)
+data0 <- subset(data0, select = -a613)
+data0 <- subset(data0, select = -n103)
+data0 <- subset(data0, select = -n1502)
+data0<-na.omit(data0)
+```
+
+```{r}
+y<-data0[,1]
+id<-data0[,2]
+data1<-data0[,c(3:42)]
+Data<-cbind(y,data1)
+Data<-na.omit(Data)
+```
+
+
+```{r}
+#library(car)
+#linearmodel2 <- lm(a35~., data = Data)
+#summary(linearmodel2)
+#vif(linearmodel2)
+```
+
+```{r}
+library(psych) 
+data2<-Data[,-1]
+fa.parallel(data2, fa="pc", n.iter=500, show.legend=FALSE, main="")
+```
+
+```{r}
+pc <- principal(data2, nfactors=10, score=TRUE)
+pc
+```
+
+```{r}
+Score = as.data.frame(pc$scores)
+#Score
+```
+
+```{r}
+tot <- cbind(id,Score)
+#()
+write.table(tot, "/Users/zonglinli/Downloads/FinalProject/Data_pca.csv",row.names=FALSE, sep = ",")
+```
+
+```{r}
+write.table(pc$weights, "/Users/zonglinli/Downloads/FinalProject/Data_pcweightes.csv",row.names=FALSE, sep = ",")
+write.table(pc$loadings, "/Users/zonglinli/Downloads/FinalProject/Data_pcloadings.csv",row.names=FALSE, sep = ",")
+```
+
