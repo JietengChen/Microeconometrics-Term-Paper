@@ -1,5 +1,5 @@
 # Microeconometrics-Final-Paper
-The repository is for the supporting materials for final paper, by Zonglin Li and Jieteng Chen.
+The repository is for the supporting materials for final paper, by *Jieteng Chen* and Zonglin Li.
 
 1 The Questionnaire provided by the CGSS official & The original CGSS data
 
