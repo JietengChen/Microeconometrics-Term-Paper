@@ -1,4 +1,4 @@
-# Individual-Level Factors Affecting the Residents’ Feeling of the Degree of Social Justice
+# Which Individual-Level Factors Affect the Social Justice? 
 ## Evidence from Chinese Survey Data
 # Abstract
 
