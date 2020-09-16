@@ -1,6 +1,6 @@
 # Which Individual-Level Factors Affect the Social Justice? 
 ## Evidence from Chinese Survey Data
-# Abstract
+### Abstract
 
 I pay attention to the citizens’ feeling about whether this society is justice in China, which is influenced by individual and regional features. The goal of this paper is to quantitatively study and identify the potential factors have impacts on social justice. Firstly, i use **PCA** to draw information of the individual attributes and perform data reduction. Then I adopt **ordered probit model** to analyze the effect of extracted principal components on peoples’ feeling about the degree of social justice. 
 
